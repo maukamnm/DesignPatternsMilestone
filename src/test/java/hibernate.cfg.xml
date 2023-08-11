@@ -3,7 +3,7 @@
     <!-- Database connection settings -->
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/design_patterns</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/demo</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">root</property>
 

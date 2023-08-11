@@ -18,7 +18,7 @@ public class JDBCConnection {
         } catch (ClassNotFoundException exc) {
             throw new RuntimeException(exc);
         }
-        String url1 = "jdbc:mysql://localhost:3306/design_patterns";
+        String url1 = "jdbc:mysql://localhost:3306/demo";
         String user = "root";
         String password = "root";
 
