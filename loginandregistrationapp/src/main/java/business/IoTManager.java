@@ -1,7 +1,7 @@
 package business;
 
 import dao.IoTDao;
-import model.IoTDevice;
+import model.Iotdevice;
 import model.Measurement;
 import model.Sensor;
 import model.Type;
@@ -13,14 +13,15 @@ import java.util.Scanner;
 public class IoTManager implements IoTManagerInterface {
 
     @Override
-    public List<IoTDevice> getDevices() {
+    public List<Iotdevice> getDevices() {
         IoTDao dao = new IoTDao();
-        List<IoTDevice> devices = new ArrayList<>();
+        List<Iotdevice> devices = new ArrayList<>();
         List<Measurement> measurementList = dao.readMeasurementsForAllDevices();
         List<Sensor> sensorList = dao.readSensors();
         for (Sensor sensor : sensorList){
-            IoTDevice device = new IoTDevice();
-            device.setDeviceId(sensor.getSensorId());
+            Iotdevice device = new Iotdevice();
+           // System.out.println(sensor.getSensorId());
+           // device.setDeviceId(sensor.getSensorId());
             device.setDataCaptured(measurementList.stream().filter(measure -> measure.getSensorId() == sensor.getSensorId()).toList());
             devices.add(device);
         }

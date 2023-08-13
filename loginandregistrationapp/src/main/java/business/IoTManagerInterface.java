@@ -1,13 +1,13 @@
 package business;
 
-import model.IoTDevice;
+import model.Iotdevice;
 import model.Measurement;
 
 import java.util.List;
 
 public interface IoTManagerInterface {
 
-    public List<IoTDevice> getDevices();
+    public List<Iotdevice> getDevices();
 
     public List<Measurement> getAllMeasurements();
     public List<Measurement> getMeasurementsForId();

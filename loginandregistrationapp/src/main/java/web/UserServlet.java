@@ -2,6 +2,7 @@ package web;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,7 +12,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import business.IoTManager;
+import dao.IoTDao;
 import dao.UserDAO;
+import model.Iotdevice;
+import model.Measurement;
 import model.User;
 
 /**
@@ -74,6 +79,21 @@ public class UserServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+
+		case "/tab":
+			try{
+				listTabularData(request, response);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			break;
+		case "/list":
+			try{
+				listUser(request, response);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			break;
 		default:
 			try{
 				listUser(request, response);
@@ -90,6 +110,18 @@ public class UserServlet extends HttpServlet {
 		request.setAttribute("listUser", listUser);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("user-list.jsp");
 		dispatcher.forward(request, response);
+	}
+	
+	private void listTabularData(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException{
+        System.out.println("Made it to method");
+		IoTDao iotDao = new IoTDao();      
+		List<Iotdevice> listData = iotDao.getDevices();
+        request.setAttribute("tabularList", listData);
+
+        // Forward to the JSP page responsible for displaying the tabular data
+        RequestDispatcher dispatcher = request.getRequestDispatcher("DataPage.jsp");
+        dispatcher.forward(request, response);
 	}
 	
 	private void deleteUser(HttpServletRequest request, HttpServletResponse response)

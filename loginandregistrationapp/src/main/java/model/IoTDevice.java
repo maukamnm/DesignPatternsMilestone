@@ -2,14 +2,14 @@ package model;
 
 import java.util.List;
 
-public class IoTDevice {
+public class Iotdevice {
     int deviceId;
     List<Measurement> dataCaptured;
 
-    public IoTDevice() {
+    public Iotdevice() {
     }
 
-    public IoTDevice(int deviceId, List<Measurement> dataCaptured) {
+    public Iotdevice(int deviceId, List<Measurement> dataCaptured) {
         this.deviceId = deviceId;
         this.dataCaptured = dataCaptured;
     }

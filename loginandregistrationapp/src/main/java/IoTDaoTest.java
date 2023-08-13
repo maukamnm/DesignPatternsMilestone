@@ -1,4 +1,3 @@
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import business.IoTManager;
 import model.Measurement;

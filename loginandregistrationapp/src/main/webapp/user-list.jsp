@@ -33,6 +33,7 @@
 
 				<a href="<%=request.getContextPath()%>/new" class="btn btn-success">Add
 					New User</a>
+								<a href="<%=request.getContextPath()%>/tab" class="btn btn-success">Tab Data</a>
 			</div>
 			<br>
 			<table class="table table-bordered">
