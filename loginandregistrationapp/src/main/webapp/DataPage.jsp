@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<jsp:useBean id="mFacade" class="facade.MeasurementFacade" scope="session"/>
 <html>
 <head>
 <title>Tab</title>
@@ -26,12 +27,13 @@
 	<div class="row">
 
 		<div class="container">
-			<h3 class="text-center">List of Users</h3>
+			<h3 class="text-center">Tabular Data</h3>
 			<hr>
 			<div class="container text-right">
 
 				<a href="<%=request.getContextPath()%>/list" class="btn btn-success">
 					Back</a>
+					<a href="<%=request.getContextPath()%>/showSensor" class="btn btn-success">Show Sensors</a>
 			</div>
 			<div class="container text-left">
 			</div>
